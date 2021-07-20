@@ -21,27 +21,63 @@ For each of these Classes, we'll indicate the data type, i.e. manual vs automati
     classDiagram
     Tribe
     Proposition
+    Product
     Service
     Component
     Squad
     Individual
     Role
+    Skill
     Stack
+    Platform
     Increment
+    Sprint
+    Review
+    Standard
+    Process
+    Decision
+    Pattern
     Tribe o-- "*" Proposition : owns
     Proposition o-- "*" Service : composed_of
+    Proposition o-- "*" Product : composed_of
     Service o-- "*" Component : composed_of
+    Service --> "*" Product : delivers 
     Tribe o-- "*" Squad : membership
     Squad o-- "*" Individual: membership
     Individual --> "1" Role: is_a
+    Individual --> "*" Skill : experienced_in
     Squad --> "*" Service: owns
     Service --> "*" Stack: uses
     Tribe o-- "*" Increment: planned_by
+    Stack <|-- Platform
+    Stack <|-- MicroService
+    Stack <|-- FrontEnd
+    Stack <|-- Storage
+    Stack <|-- Messaging
+    Increment o-- "*" Sprint : contains
+    Sprint o-- "*" Review : ends_with
+    Review --> "1" Squad
+    Tribe o-- "*" Standard : has
+    Tribe o-- "*" Process : has
+    Tribe o-- "*" Decision : has
+    Decision --> "*" Proposition : targets
+    Decision --> "*" Squad : targets
+    Decision --> "*" Service : targets
+    Decision --> "*" Component : targets
+    Decision --> "*" Stack : targets
+    Decision --> "*" Standard : targets
+    Decision --> "*" Process : targets
+    Decision --> "*" Pattern : targets
+    Decision --> "1" Increment : decided
+    Decision --> "1..*" Individual : decider
+    Tribe o-- "*" Pattern : has
 </div>
 
-| Class           | Description                                                                          | Collection   |
-|-----------------|--------------------------------------------------------------------------------------|--------------|
-| [Tribe](#tribe) | A delivery organisation focused on a set of related product propositions.           | Manual       |
+| Class                       | Description                                                                          | Collection   | Template        |
+|-----------------------------|--------------------------------------------------------------------------------------|--------------|-----------------|
+| [Tribe](#tribe)             | A delivery organisation focused on a set of related product propositions             | Manual       |                 |
+| [Proposition](#proposition) | A grouping of related products and services that provide a common business objective | Manual       | 
+
 
 ### Tribe
 
@@ -49,7 +85,6 @@ For each of these Classes, we'll indicate the data type, i.e. manual vs automati
 
 The top-level class for the whole dashboard. The [Tribe](#Tribe) owns the majority of the other items in the Dashboard.
 
-A Tribe is defined using the [tribe.html]() layout.
 
 | Data/Association | Description                                                                                       |
 |------------------|---------------------------------------------------------------------------------------------------|
@@ -57,6 +92,19 @@ A Tribe is defined using the [tribe.html]() layout.
 
 
 ### Proposition
+
+> A grouping of related products and services that provide a common business objective.
+
+We group a related set of products/services/assets into a [Proposition](#proposition) so that we can organise our
+requirements, designs, squads, ownership and leadership for a set of common business and engineering outcomes. Its 
+creates a high level business and engineering bounded context.
+
+| Data/Association | Description                                                                                          |
+|------------------|------------------------------------------------------------------------------------------------------|
+| Title            | The name of the Proposition                                                                          |
+| Description      | The TL;DR description for the [Proposition](#proposition)                                            |
+| Leads            | A list of [Proposition](#proposition) Product and Engineering leadership [Individual](#individual)'s |
+| Site             | URL to the [Proposition](#proposition)'s micro-site                                                  |
 
 ### Service
 

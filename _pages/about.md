@@ -73,10 +73,10 @@ For each of these Classes, we'll indicate the data type, i.e. manual vs automati
     Tribe o-- "*" Pattern : has
 </div>
 
-| Class                       | Description                                                                          | Collection   | Template        |
-|-----------------------------|--------------------------------------------------------------------------------------|--------------|-----------------|
-| [Tribe](#tribe)             | A delivery organisation focused on a set of related product propositions             | Manual       |                 |
-| [Proposition](#proposition) | A grouping of related products and services that provide a common business objective | Manual       | 
+| Class                       | Description                                                                          | Collection   | Layout                                                                                                    |
+|-----------------------------|--------------------------------------------------------------------------------------|--------------|-----------------------------------------------------------------------------------------------------------|
+| [Tribe](#tribe)             | A delivery organisation focused on a set of related product propositions             | Manual       | Implicit. Part of the Site's Jekyll Configuration                                                         |
+| [Proposition](#proposition) | A grouping of related products and services that provide a common business objective | Manual       | [proposition](https://github.com/Treewalking/treewalking-dashboard/blob/master/_layouts/proposition.html) |
 
 
 ### Tribe

@@ -5,3 +5,35 @@ description: # TL;DR description for the proposition
 leads: # list of references to Individuals
 ---
 
+<hr>
+
+{{ page.description }}
+
+<hr>
+
+<table>
+    <thead>
+        <tr>
+            <td>Leads</td>
+            <td>Products</td>
+            <td>Services</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                {% for lead in page.leads %}
+                    {% capture author_name %}{{ lead.name }}{% endcapture %}
+                    {% include author.html name=author_name %} ({{ lead.role }}) <br>
+                {% endfor %}
+            </td>
+            <td>
+
+            </td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+</table>
+

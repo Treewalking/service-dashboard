@@ -1,0 +1,4 @@
+---
+layout: individuals
+title: Individuals
+---

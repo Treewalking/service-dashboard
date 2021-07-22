@@ -1,0 +1,25 @@
+---
+layout: single
+---
+
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Role</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for author in site.data.authors %}
+        <tr>
+            <td>
+                {% capture author_name %}{{ author[1].name }}{% endcapture %}
+                {% include author.html name=author_name %}
+            </td>
+            <td>
+                {{ author[1].role }}
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>

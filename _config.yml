@@ -91,6 +91,17 @@ defaults:
       author_profile: true
 
 collections:
+  individuals:
+    output: true
+    permalink: /:collection/:path
   propositions:
     output: true
     permalink: /:collection/:path
+
+page_gen-dirs: true
+
+page_gen:
+  - data: 'authors'
+    template: 'individual'
+    name: 'name'
+    dir: 'individuals'

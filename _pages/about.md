@@ -77,7 +77,7 @@ For each of these Classes, we'll indicate the data type, i.e. manual vs automati
 |-----------------------------|--------------------------------------------------------------------------------------|--------------|-----------------------------------------------------------------------------------------------------------|
 | [Tribe](#tribe)             | A delivery organisation focused on a set of related product propositions             | Manual       | Implicit. Part of the Site's Jekyll Configuration                                                         |
 | [Proposition](#proposition) | A grouping of related products and services that provide a common business objective | Manual       | [proposition](https://github.com/Treewalking/treewalking-dashboard/blob/master/_layouts/proposition.html) |
-
+| [individual](#individual)   | An individual member of the Tribe                                                    | Manual       |
 
 ### Tribe
 
@@ -109,3 +109,18 @@ creates a high level business and engineering bounded context.
 ### Service
 
 ### Component
+
+### Individual
+
+> An individual member of the Tribe  
+
+This is a simple reference to an Individual](#individual) within the [Tribe](#Tribe). It uses the Jekyll data source
+[authors.yml]().
+
+| Data/Association | Description                                                                                       |
+|------------------|---------------------------------------------------------------------------------------------------|
+| Name             | The name of the [Individual](#individual)                                                         |
+| Role             | The primary Role of the [Individual](#individual)
+| Summary          | Simple summary of the [Individual](#individual)
+| Image            | URL to the [Individual](#individual)'s thumbnail image
+| References       | List of references for the [Individual](#individual)
